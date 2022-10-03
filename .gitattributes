@@ -2,7 +2,6 @@
 # Set default behavior to automatically normalize line endings.
 ###############################################################################
 * text=auto
-
 ###############################################################################
 # Set default behavior for command prompt diff.
 #
@@ -11,7 +10,6 @@
 # Note: This is only used by command line
 ###############################################################################
 #*.cs     diff=csharp
-
 ###############################################################################
 # Set the merge driver for project and solution files
 #
@@ -34,7 +32,6 @@
 #*.modelproj merge=binary
 #*.sqlproj   merge=binary
 #*.wwaproj   merge=binary
-
 ###############################################################################
 # behavior for image files
 #
@@ -43,7 +40,6 @@
 #*.jpg   binary
 #*.png   binary
 #*.gif   binary
-
 ###############################################################################
 # diff behavior for common document formats
 # 
@@ -61,3 +57,24 @@
 #*.PDF   diff=astextplain
 #*.rtf   diff=astextplain
 #*.RTF   diff=astextplain
+clean_code(中文完整版).pdf filter=lfs diff=lfs merge=lfs -text
+编程珠玑高清pdf版.pdf filter=lfs diff=lfs merge=lfs -text
+Effective.Java.pdf filter=lfs diff=lfs merge=lfs -text
+MongoDB权威指南.pdf filter=lfs diff=lfs merge=lfs -text
+Java核心技术[[:space:]]卷II[[:space:]]（第8版）.pdf filter=lfs diff=lfs merge=lfs -text
+Java编程思想(第4版).pdf filter=lfs diff=lfs merge=lfs -text
+Java编程思想第四版完整中文高清版.pdf filter=lfs diff=lfs merge=lfs -text
+Nginx开发从入门到精通.pdf filter=lfs diff=lfs merge=lfs -text
+重构-改善既有代码的设计[[:space:]]中文版.pdf filter=lfs diff=lfs merge=lfs -text
+Head+First设计模式(中文版).pdf filter=lfs diff=lfs merge=lfs -text
+JAVA架构知识库整理.pdf filter=lfs diff=lfs merge=lfs -text
+Java核心技术[[:space:]]卷I[[:space:]](第8版).pdf filter=lfs diff=lfs merge=lfs -text
+深入理解Java虚拟机：JVM高级特性与最佳实践（最新第二版）.pdf filter=lfs diff=lfs merge=lfs -text
+Java[[:space:]]7编程高级进阶(jb51.net).pdf filter=lfs diff=lfs merge=lfs -text
+Java[[:space:]]NIO[[:space:]]中文版.pdf filter=lfs diff=lfs merge=lfs -text
+spring-boot-中文参考手册.pdf filter=lfs diff=lfs merge=lfs -text
+《剑指Offer》题目及代码.pdf filter=lfs diff=lfs merge=lfs -text
+七周七语言.pdf filter=lfs diff=lfs merge=lfs -text
+从PAXOS到ZOOKEEPER分布式一致性原理与实践.pdf filter=lfs diff=lfs merge=lfs -text
+Java程序设计语言-第4版.pdf filter=lfs diff=lfs merge=lfs -text
+Quartz_Job+Scheduling_Framework_中文版_V1.0.0.pdf filter=lfs diff=lfs merge=lfs -text
