@@ -45,20 +45,26 @@ void ta(char ch[HA][LI], int ha, int li)
 }
 void player(char ch[HA][LI], int ha, int li)
 {
-	while(1)
-	{
-	printf("请输入：");
 	int x, y;
-	scanf("%d,%d", &x, &y);
-	
-	
-		if (ch[x - 1][y - 1] == ' ')
+	while (1)
+	{
+		printf("请输入：");
+		scanf("%d,%d", &x, &y);
+
+		if (x <=ha && y <= li&&x >0&&y > 0)
 		{
-			ch[x - 1][y - 1] = '*';
-			break;
+			if (ch[x - 1][y - 1] == ' ')
+			{
+				ch[x - 1][y - 1] = '*';
+				break;
+			}
+			else
+				printf("看错了\n");
 		}
 		else
-			printf("看错了\n");
+		{
+			printf("非法\n");
+		}
 	}
 }
 char who(char ch[HA][LI], int ha, int li)
@@ -79,40 +85,41 @@ char who(char ch[HA][LI], int ha, int li)
 	{
 		return ch[1][1];
 	}
-	else if (ch[0][2] == ch[1][1] && ch[1][1] == ch[2][0] && ch[2][0])
+	else if (ch[0][2] == ch[1][1] && ch[1][1] == ch[2][0] && ch[2][0] != ' ')
 	{
 		return ch[1][1];
 	}
-	int m = full(ch, HA, LI);
+	int m = full(ch, ha, li);
 	if (m != 0)
 	{
 		return 'p';
 	}
-	else return 'c';
+	return 'c';
+}
+int full(char ch[HA][LI], int ha, int li)
+{
+	int i, j;
+	for (i = 0; i < ha; i++)
+	{
+		for (j = 0; j < li; j++)
+		{
+			if (ch[i][j] == ' ')
+				return 0;
+		}
+	}
+	return 1;
 }
 void com(char ch[HA][LI], int ha, int li)
 {
-	int x = rand() % 3;
-	int y = rand() % 3;
+	
 	while (1)
 	{
-		if (ch[x][y] != ' ')
+		int x = rand() % 3;
+		int y = rand() % 3;
+		if (ch[x][y] == ' ')
 		{
 			ch[x][y] = '#';
 			break;
 		}
 	}
-}
-int full(char ch[HA][LI], int ha, int li)
-{
-	int i,j;
-		for (i = 0; i < ha; i++)
-		{
-			for (j = 0; j < li; j++)
-			{
-				if (ch[i][j] == ' ')
-					return 0;
-			}
-		}
-		return 1;
 }

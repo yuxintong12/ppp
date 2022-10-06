@@ -33,14 +33,15 @@ void game()
 	{
 		printf("你赢了\n");
 	}
-	if (re == '#')
+	else if (re == '#')
 	{
 		printf("你输了\n");
 	}
-	if (re == 'p')
+	else
 	{
 		printf("平局了\n");
 	}
+	pp(ch, HA, LI);
 
 }
 int main()
@@ -63,7 +64,7 @@ int main()
 			break;
 		default:
 			printf("非法输入\n");
-			
+			break;
 		}
 	} while (input);
 }
