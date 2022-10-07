@@ -16,15 +16,15 @@ void game()
 	//打印棋盘
 	pp(ch,HA,LI);
 	char re = 0;
-	while (1)
+	while (1)//循环下棋
 	{
-		player(ch, HA, LI);
-		pp(ch, HA, LI);
-		re = who(ch, HA, LI);
-		if (re != 'c')
+		player(ch, HA, LI);//玩家下棋
+		pp(ch, HA, LI);//下完打印棋局
+		re = who(ch, HA, LI);//建立胜负判断值
+		if (re != 'c')//判断棋局是否结束
 			break;
-		com(ch, HA, LI);
-		pp(ch, HA, LI);
+		com(ch, HA, LI);//电脑下棋
+		pp(ch, HA, LI);//打印棋局
 		re = who(ch, HA, LI);
 		if (re != 'c')
 			break;

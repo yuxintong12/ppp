@@ -86,6 +86,7 @@ char who(char ch[HA][LI], int ha, int li)
 		return ch[1][1];
 	}
 	else if (ch[0][2] == ch[1][1] && ch[1][1] == ch[2][0] && ch[2][0] != ' ')
+		//判断条件应该写全不然会返回空格造成误判使得未满就返回尤其是对角线；
 	{
 		return ch[1][1];
 	}
