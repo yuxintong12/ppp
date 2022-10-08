@@ -112,6 +112,7 @@ int full(char ch[HA][LI], int ha, int li)
 }
 void com(char ch[HA][LI], int ha, int li)
 {
+	printf("µçÄÔÂä×Ó\n");
 	
 	while (1)
 	{
