@@ -14,7 +14,8 @@ void game()
 	//填充初始化数组
 	ti(ch, HANG, LIE, '0');
 	ti(ph, HANG, LIE, '*');
-	//
+	//放雷
+	put()
 }
 int main()
 {
