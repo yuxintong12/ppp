@@ -10,7 +10,6 @@ int main()
 		put = input - 32;
 		putchar(put);
 		putchar('\n');
-		int define = 0;
 	}
 	return 0;
 
