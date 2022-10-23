@@ -1,28 +1,36 @@
 #define _CRT_SECURE_NO_WARNINGS 1
-#define _CRT_SECURE_NO_WARNINGS 1
 #include <stdio.h>
-int main() {
-    float arr[5][6] = { 0 };
+#define NUM 3
+void de(int arr[], int num)
+{
+    int j,i;
+    for (j = 0; j < num; j++)
+    {
+        for (i = 0; i <= num - 1 - j; i++)
+        {
+            if (arr[i] > arr[i + 1])
+            {
+                    int ret  = 0;
+                    arr[i] = ret;
+                    arr[i] = arr[i + 1];
+                    arr[i + 1] = ret;
+            }
+        }
+    }
+}
+    int main()
+{
+    int arr[3] = { 0 };
     int i;
-    int j;
+    for (i = 0; i < NUM; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+    de(arr,NUM);
+    for (i = 0; i < NUM; i++)
+    {
+        printf("%d ", arr[i]);
+    }
 
-    for (i = 0; i < 6; i++)
-    {
-        float sum = 0;
-        for (j = 0; j < 5; j++)
-        {
-            scanf("%f", &arr[i][j]);
-            sum += arr[i][j];
-        }
-        arr[i][j + 1] = sum;
-    }
-    for (i = 0; i < 6; i++)
-    {
-        for (j = 0; j < 6; j++)
-        {
-            printf("%5.1f ", arr[i][j]);
-        }
-        printf("\n");
-    }
     return 0;
 }
