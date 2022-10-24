@@ -1,37 +1,36 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include<stdio.h>
-#include<math.h>
-#define NUM 3
-void de(int arr[], int num)
+void line(int arr[], int sz)
 {
-    int j, i;
-    for (j = 0; j < num - 1; j++)
+    int i, j;
+    for (i = 1; i < sz; i++)
     {
-        for (i = 0; i <num - 1 - j; i++)
+        for (j = 0; j < i; j++)
         {
-            if (arr[i] > arr[i + 1])
+            int tem = 0;
+            if (arr[i] < arr[j])
             {
-                int ret = 0;
-                ret = arr[i];
-                arr[i] = arr[i + 1];
-                arr[i + 1] = ret;
+                tem = arr[i];
+                arr[i] = arr[j];
+                arr[j] = tem;
             }
         }
     }
 }
 int main()
 {
-    int arr[3] = { 0 };
-    int i;
-    for (i = 0; i < NUM; i++)
+    int j ;
+    int arr[3];
+    for (j = 0; j < 3; j++)
     {
-        scanf("%d", &arr[i]);
+        scanf("%d", &arr[j]);
     }
-    de(arr, NUM);
-    for (i = 0; i < NUM; i++)
-    {
-        printf("%d ", arr[i]);
-    }
-
+        int sz = sizeof(arr) / sizeof(arr[0]);
+        line(arr, sz);
+        int i;
+        for (i = 0; i < sz; i++)
+        {
+            printf("%d ",arr[i]);
+        }
     return 0;
 }
