@@ -8,7 +8,7 @@ void bubble(int arr[], int sz)
 	{
 		for (j = 0; j < sz - 1 - i;j ++)
 		{
-			if (arr[j] < arr[j + 1])
+			if (arr[j] > arr[j + 1])
 			{
 				int temp = 0;
 				temp = arr[j];
