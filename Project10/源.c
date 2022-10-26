@@ -1,36 +1,24 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include<stdio.h>
-void line(int arr[], int sz)
-{
-    int i, j;
-    for (i = 1; i < sz; i++)
-    {
-        for (j = 0; j < i; j++)
-        {
-            int tem = 0;
-            if (arr[i] < arr[j])
-            {
-                tem = arr[i];
-                arr[i] = arr[j];
-                arr[j] = tem;
-            }
-        }
-    }
-}
+#include<windows.h>
+#include<stdlib.h>
 int main()
 {
-    int j ;
-    int arr[3];
-    for (j = 0; j < 3; j++)
+    char ch[] = { "welcom to bit!!!!!" };
+    char ch1[] = { "******************" };
+    int i = 0;
+    int sz = sizeof(ch) / sizeof(ch[0]) - 2;
+    while (i <= sz)
     {
-        scanf("%d", &arr[j]);
+        ch1[i] = ch[i];
+        ch1[sz] = ch[sz];
+        printf("%s\n", ch1);
+        Sleep(100);
+        system("cls");
+        i++;
+        sz--;
+
     }
-        int sz = sizeof(arr) / sizeof(arr[0]);
-        line(arr, sz);
-        int i;
-        for (i = 0; i < sz; i++)
-        {
-            printf("%d ",arr[i]);
-        }
+
     return 0;
 }
