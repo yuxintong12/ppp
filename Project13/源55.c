@@ -1,28 +1,29 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #define _CRT_SECURE_NO_WARNINGS 1
 #include <stdio.h>
-#include<assert.h>
-void ga(int x, int* a)
-{
-    static int i = 0;
-    *a++ = x % 10;
-    i++;
-    if (i < 4)
-    {
-        ga(x / 10, a);
-    }
-}
+#include <stdlib.h>
+#include<string.h>
+
 int main()
 {
-    int arr[4];
-    int i = 0;
+    int arr[26] = { 0 };
+    char i = 0;
     int j = 0;
-    scanf("%d", &i);
-    ga(i, arr);
-    assert(arr != NULL);
-    for (j = 0; j < 4; j++)
+    int te = 0;
+    while (i = getchar()  != '\n')
     {
-        printf("%d", arr[j]);
+        arr[i - 'a'] ++;
     }
+    int max = 0;
+    for (j = 0; j < 26; j++)
+    {
+        if (max < arr[j])
+        {
+            max = arr[j];
+            te = j;
+        }
+    }
+    printf("%c", te + 97);
+    printf("%d", max);
     return 0;
 }
