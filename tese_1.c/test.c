@@ -22,7 +22,7 @@ void game()
 		if (a == s)
 		{
 			printf("你真厉害，猜对了\n");
-			Sleep(10);
+			Sleep(10000);
 			system("cls");
 			break;
 		}
@@ -46,7 +46,7 @@ int main()
 	{
 		//打印菜单
 		pr();
-		
+		printf("请选择:>");
 		scanf("%d", &input);
 		switch (input)
 		{
