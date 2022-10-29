@@ -24,12 +24,12 @@ int main()
 		}
 		else 
 		{
-			printf("鎵惧埌浜哱n");
+			printf("找到了\n");
 			break;
 		}
 		if(left > right)
 		{
-			printf("鎵句笉鍒颁簡\n");
+			printf("找不到了\n");
 		}
 	}
 	return 0;
