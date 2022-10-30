@@ -4,7 +4,8 @@
 int main()
 {
 	char arr[12][12] =
-	{"000000000000",
+	{ 
+"000000000000",
 	"0UDDLUULRUL0",
 	"0UURLLLRRRU0",
 	"0RRUURLDLRD0",
