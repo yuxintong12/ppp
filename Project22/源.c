@@ -4,11 +4,11 @@ int main()
 {
 	int a = 0;
 	int b = 0;
-	int n = 0;
-	scanf("%d %d %d",&a,&b,&n);
+	long int n = 0;
+	scanf("%d %d %ld",&a,&b,&n);
 	int i = 0;
 	int j = 0;
-	int count = 0;
+	long int count = 0;
 	while (1)//每天不停的做题
 	{
 		for (i = 0; i < 5; i++)
@@ -31,6 +31,6 @@ int main()
 		}
 	}
 t :
-	printf("%d",count);
+	printf("%ld",count);
 	return 0;
 }
