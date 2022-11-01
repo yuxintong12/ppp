@@ -18,8 +18,8 @@ void de(int arr[], int sz)
 		
 			int tem = 0;
 			tem = arr[i];
-			arr[i] = arr[j];
-			arr[j] = tem;
+			arr[i] = arr[min];
+			arr[min] = tem;
 	}
 }
 int main()
