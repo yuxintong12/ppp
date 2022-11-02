@@ -1,41 +1,38 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include<stdio.h>
-void de(int arr[], int sz)
+void de(int arr[], int dz)
 {
 	int i = 0;
-	int j = 0;
-	int min = 0;
-	for (i = 0; i < sz - 1;i++)
+	int j;
+	int a = 0;
+	for (i = 1; i < dz; i++)
 	{
-		min = i;
-		for (j = i + 1; j < sz; j++)
+		int te = arr[i];
+		int b = i;
+		for (j = i - 1; j >= 0; j--)
 		{
-			if (arr[i] > arr[j])
+			if (te < arr[j])
 			{
-				min = j;
+				arr[b] = arr[j];
+					b--;
+			}
+			else
+			{
+				break;
 			}
 		}
-		
-			int tem = 0;
-			tem = arr[i];
-			arr[i] = arr[min];
-			arr[min] = tem;
+		arr[b] = te;
 	}
 }
 int main()
 {
-	int i = 0;
-	int arr[10] = { 0 };
-	for (i = 0; i < 10; i++)
-	{
-		scanf("%d", &arr[i]);
-	}
+	int arr[10] = { 2,3,4,5,6,7,8,9,10,1 };
 	int sz = sizeof(arr) / sizeof(arr[0]);
- 	de(arr, sz);
-
+	de(arr, sz);
+	int i = 0;
 	for (i = 0; i < sz; i++)
 	{
 		printf("%d ", arr[i]);
-	}	
+	}
 	return 0;
 }
