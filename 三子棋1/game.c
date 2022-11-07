@@ -1,0 +1,66 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include"gg.h"
+
+void pr()
+{
+	printf("*************\n");
+	printf("*   1.play  *\n");
+	printf("*   0.exit  *\n");
+	printf("*************\n");
+}
+void game()
+{
+	//设定判定变量
+	int judge = 0;
+	//创建数组并且初始化放入空格
+	char arr[HA][LI];
+	init(arr,HA,LI);
+	//打印棋盘
+	print(HA, LI, arr);
+	while (1)
+	{
+		//玩家移动
+		player_move(arr, HA, LI);
+		print(HA, LI, arr);
+		//电脑移动
+		srand((unsigned int)time(NULL));
+		com_mov(arr, HA, LI);
+		print(HA, LI, arr);
+		judge = win(arr, HA, LI);
+		if (judge == '*')
+		{
+			printf("你赢了\n");
+		}
+		if (judge == '#')
+		{
+			printf("你输了\n");
+		}
+
+	}
+
+}
+
+int main()
+{
+	//判断依据
+	int input = 0;
+	do
+	{
+		pr();
+		printf("请输入:>");
+		scanf("%d", &input);
+		switch (input)
+		{
+			case 1:
+				printf("三子棋\n");
+				game();
+				break;
+			case 0:
+				printf("退出游戏\n");
+					break;
+		}
+		system("clean");
+
+	} while (input);
+	return 0;
+}
