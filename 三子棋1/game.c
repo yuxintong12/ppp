@@ -58,6 +58,8 @@ int main()
 			case 0:
 				printf("ÍË³öÓÎÏ·\n");
 					break;
+			default:
+				printf("Êä´íÁË\n");
 		}
 		system("clean");
 
