@@ -1,4 +1,10 @@
 #pragma once
+/*
+	项目名：三子棋
+	负责人：郁昕瞳
+	迭代版本：1.0v
+	日期：2022.11.7
+*/
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
