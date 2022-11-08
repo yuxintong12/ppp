@@ -72,7 +72,7 @@ void player_move(char arr[HA][LI], int ha, int li)
 void com_mov(char arr[HA][LI], int ha, int li)
 {
 	printf("µçÄÔÊäÈë£º\n");
-	Sleep("1000");
+	Sleep(1000);
 	while (1)
 	{
 		int x = rand() % ha;
@@ -83,4 +83,63 @@ void com_mov(char arr[HA][LI], int ha, int li)
 			break;
 		}
 	}
+}
+int win(char arr[HA][LI], int ha, int li)
+{
+	int i = 0;
+	int j = 0;
+	char compare = arr[i][j];
+	int count = 1;
+	while(j < li)
+	{
+		if (count <= 2)
+		{
+			if (compare == arr[i][j + 1])
+			{
+				j++;
+				count++;
+			}
+			else if (compare == arr[i + 1][j + 1])
+			{
+				i++;
+				j++;
+				count++;
+			}
+			else if (compare == arr[i + 1][j])
+			{
+				i++;
+				count++;
+			}
+			else
+			{
+				j++;
+				compare = arr[i][j];
+			}
+		}
+		else
+			return compare;
+
+	}
+	if (full(arr, HA, LI) != 0)
+	{
+		return 'c';
+	}
+	else
+		return 'p';
+}
+int full(char arr[HA][LI], int ha, int li)
+{
+	int i = 0;
+	int j = 0;
+	for (i = 0; i < ha; i++)
+	{
+		for (j = 0; j < li; j++)
+		{
+			if (arr[i][j] == ' ')
+			{
+				return 1;
+			}
+		}
+	}
+	return 0;
 }

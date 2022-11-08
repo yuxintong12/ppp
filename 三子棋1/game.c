@@ -30,10 +30,21 @@ void game()
 		if (judge == '*')
 		{
 			printf("你赢了\n");
+			break;
 		}
-		if (judge == '#')
+		else if (judge == '#')
 		{
 			printf("你输了\n");
+			break;
+		}
+		else if (judge == 'p')
+		{
+			printf("平了\n");
+			break;
+		}
+		else
+		{
+			printf("游戏继续\n");
 		}
 
 	}
@@ -61,7 +72,9 @@ int main()
 			default:
 				printf("输错了\n");
 		}
-		system("clean");
+		Sleep(1000);
+		system("pause");
+		system("cls");
 
 	} while (input);
 	return 0;
