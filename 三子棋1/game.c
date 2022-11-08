@@ -10,8 +10,12 @@ void pr()
 }
 void game()
 {
+	char c = '0';
+	//自定义玩家执子
+	printf("请输入你所要执的子:>");
+	scanf("%c", &c);
 	//设定判定变量
-	int judge = 0;
+	char judge = '0';
 	//创建数组并且初始化放入空格
 	char arr[HA][LI];
 	init(arr,HA,LI);
@@ -20,33 +24,46 @@ void game()
 	while (1)
 	{
 		//玩家移动
-		player_move(arr, HA, LI);
+		player_move(arr, HA, LI,c);
 		print(HA, LI, arr);
+		judge = win(arr, HA, LI,c);
+		
+		if(judge == 'c')
+		{
+			printf("游戏继续\n");
+		}//在在循环内部只用判断是否继续就好了不用判断别的。如果非c就跳出去就可
+		else
+		{
+			break;
+		}
 		//电脑移动
 		srand((unsigned int)time(NULL));
 		com_mov(arr, HA, LI);
 		print(HA, LI, arr);
-		judge = win(arr, HA, LI);
-		if (judge == '*')
+		judge = win(arr, HA, LI,'#');
+		
+		if (judge == 'c')
 		{
-			printf("你赢了\n");
-			break;
-		}
-		else if (judge == '#')
-		{
-			printf("你输了\n");
-			break;
-		}
-		else if (judge == 'p')
-		{
-			printf("平了\n");
-			break;
+			printf("游戏继续\n");
+
 		}
 		else
 		{
-			printf("游戏继续\n");
+			break;
 		}
 
+	}
+	if (judge == c)
+	{
+		printf("你赢了\n");
+	}
+	else if (judge == '#')
+	{
+		printf("小趴菜,fw\n");
+	}
+	else
+	{
+		printf("这都能平？？\n");
 	}
 
 }
@@ -75,6 +92,7 @@ int main()
 		}
 		Sleep(1000);
 		system("pause");
+		getchar();
 		system("cls");
 
 	} while (input);
