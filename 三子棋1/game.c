@@ -59,14 +59,15 @@ int main()
 	{
 		pr();
 		printf("请输入:>");
-		scanf("%d", &input);
+		scanf("%c", &input);//读取字符可以排除输入整数之外的字符导致死循环，同时也可以实现do  while的判段条件
+		getchar();//getchar的目的是将字符后边的\n
 		switch (input)
 		{
-			case 1:
+			case '1':
 				printf("三子棋\n");
 				game();
 				break;
-			case 0:
+			case '0':
 				printf("退出游戏\n");
 					break;
 			default:
