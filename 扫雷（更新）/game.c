@@ -7,6 +7,16 @@ void game()
 	//初始化扫雷底层数组，并且传入相应的初始化字符
 	init(de, HAS, LIS,'0');
 	init(show, HAS, LIS,'*');
+	//打印数组
+	print(de, HA, LI);
+	print(show, HA, LI);
+	//放雷
+
+	put(de,HA,LI);
+	print(de, HA, LI);
+	play_remove(de, show, HA, LI);
+	print(show, HA, LI);
+
 
 }
 void sys()
@@ -27,6 +37,8 @@ void pr()
 int main()
 {
 	int input = '0';
+	srand((unsigned int)time(NULL));
+
 	do
 	{
 		pr();
