@@ -11,4 +11,4 @@
 void init(char ch[HAS][LIS], int has, int lis,char c);
 void print(char ch[HA][LI], int ha, int li);
 void put(char ch[HA][LI], int ha, int li);
-void play_remove(char de[HA][LI], char show[HA][LI], int ha, int li);
+int play_remove(char de[HA][LI], char show[HA][LI], int ha, int li);

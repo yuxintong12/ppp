@@ -37,7 +37,7 @@ void print(char ch[HA][LI], int ha, int li)
 }
 void put(char ch[HA][LI], int ha, int li)
 {
-	int new = NEW;
+	int new = NEW;//new为常量10
 
 	while (new > 0)
 	{
@@ -52,7 +52,7 @@ void put(char ch[HA][LI], int ha, int li)
 		
 	}//为什么放在while条件上就会少放一个？？
 }
-void play_remove(char de[HA][LI], char show[HA][LI], int ha, int li)
+int play_remove(char de[HA][LI], char show[HA][LI], int ha, int li)
 {
 	int x = 0;
 	int y = 0;
@@ -77,6 +77,10 @@ void play_remove(char de[HA][LI], char show[HA][LI], int ha, int li)
 			else
 			{
 				char c = search(de, x, y) + '0';
+				if (c = 0)
+				{
+					change(show, de, ha, li);
+				}
 				show[x][y] = c;
 				break;
 			}
@@ -112,4 +116,8 @@ int search(char ch[HA][LI], int x, int y)
 		}
 	}
 	return count;
+}
+void change(char show[HA][LI], char de[HA][LI], int ha, int li)
+{
+
 }

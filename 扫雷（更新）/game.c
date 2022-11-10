@@ -14,8 +14,21 @@ void game()
 
 	put(de,HA,LI);
 	print(de, HA, LI);
-	play_remove(de, show, HA, LI);
-	print(show, HA, LI);
+	int y = NEW;
+	while (1)
+	{
+		int x = play_remove(de, show, HA, LI);
+		print(show, HA, LI);
+		if (x == 0)
+		{
+			break;
+		}
+		else if (check(show, HA, LI) == 1)
+		{
+			printf("–°÷˜Õ˛Œ‰\n");
+			break;
+		}
+	}
 
 
 }
@@ -58,7 +71,7 @@ int main()
 			printf(" ‰»Î¥ÌŒÛ\n");
 			break;
 		}
-		sys();
+	    sys();
 	} while (input != '0');
 	return 0;
 }
