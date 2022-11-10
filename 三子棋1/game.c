@@ -95,6 +95,6 @@ int main()
 		getchar();
 		system("cls");
 
-	} while (input);
+	} while (input != '0');
 	return 0;
 }
