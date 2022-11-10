@@ -76,12 +76,7 @@ int play_remove(char de[HA][LI], char show[HA][LI], int ha, int li)
 			}
 			else
 			{
-				char c = search(de, x, y) + '0';
-				if (c = 0)
-				{
-					change(show, de, ha, li);
-				}
-				show[x][y] = c;
+				change(show, de, ha, li, x, y);
 				break;
 			}
 
@@ -117,7 +112,40 @@ int search(char ch[HA][LI], int x, int y)
 	}
 	return count;
 }
-void change(char show[HA][LI], char de[HA][LI], int ha, int li)
+void change(char show[HA][LI], char de[HA][LI], int ha, int li,int x,int y)
 {
-
+	char c = search(de, x, y);
+	static int i = -1;
+	static int j = 0;
+	if (show[x][y] != '*' )    
+	{
+		if (i = -1)
+		{
+			i++;
+			change(show, de, ha, li, x + i, y + i);
+		}
+		else
+		{
+			if (j < )
+	}
+	else
+	{
+		if (c == 0)
+		{
+			show[x][y] = ' ';
+			if (i = -1)
+			{
+				i++;
+				change(show, de, ha, li, x + i, y + i);
+			}
+			else
+			{
+				if(j <)
+			}
+		}
+		else
+		{
+			show[x][y] = c;
+		}
+	}
 }
