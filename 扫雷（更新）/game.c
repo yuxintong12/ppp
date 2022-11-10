@@ -1,5 +1,14 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include"game.h"
+void game()
+{
+	char de[HAS][LIS] = { '0' };
+	char show[HAS][LIS] = { '0' };
+	//初始化扫雷底层数组，并且传入相应的初始化字符
+	init(de, HAS, LIS,'0');
+	init(show, HAS, LIS,'*');
+
+}
 void sys()
 {
 	Sleep(1000);
@@ -28,6 +37,7 @@ int main()
 		{
 		case '1':
 			printf("扫雷\n");
+			game();
 			break;
 		case '0':
 			printf("退出游戏\n");
