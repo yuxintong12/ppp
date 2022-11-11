@@ -12,7 +12,7 @@ void game()
 	print(show, HA, LI);
 	//·ÅÀ×
 
-	put(de,HA,LI);
+	put(de,HAS,LIS);
 	print(de, HA, LI);
 	int y = NEW;
 	while (1)

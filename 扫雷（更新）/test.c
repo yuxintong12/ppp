@@ -35,7 +35,7 @@ void print(char ch[HA][LI], int ha, int li)
 	printf("-----É¨À×-----\n");
 
 }
-void put(char ch[HA][LI], int ha, int li)
+void put(char ch[HAS][LIS], int ha, int li)
 {
 	int new = NEW;//newÎª³£Á¿10
 
