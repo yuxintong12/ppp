@@ -12,18 +12,20 @@ void game()
 	print(show, HA, LI);
 	//·ÅÀ×
 
-	put(de,HAS,LIS);
+	put(de,HA,LI);
 	print(de, HA, LI);
 	int y = NEW;
 	while (1)
 	{
-		int x = play_remove(de, show, HA, LI);
-		print(show, HA, LI);
-		if (x == 0)
+		if (play_remove(de, show, HA, LI) == 0)
 		{
+			print(show, HA, LI);
+
 			break;
 		}
-		else if (check(show, HA, LI) == 1)
+		print(show, HA, LI);
+		int x = check(show, HA, LI);
+		if ( x == 1)
 		{
 			printf("Ð¡Ö÷ÍþÎä\n");
 			break;
@@ -49,7 +51,7 @@ void pr()
 }
 int main()
 {
-	int input = '0';
+	char input = '0';
 	srand((unsigned int)time(NULL));
 
 	do
