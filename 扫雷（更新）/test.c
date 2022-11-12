@@ -65,6 +65,7 @@ int play_remove(char de[HAS][LIS], char show[HAS][LIS], int ha, int li)
 		printf("请开始排雷\n");
 		printf("请输入坐标进行排除:>\n");
 		scanf("%d,%d", &x, &y);
+		getchar();
 		if (x >= 1 && x <= ha && y >= 1 && y <= li)
 		{
 			if (de[x][y] == '1')
@@ -116,16 +117,24 @@ void change(char show[HAS][LIS], char de[HAS][LIS],int x,int y)
 {
 	char c = search(de, x,y) + '0';
 	static int n = 0;
-
+aa:
 	if (judge(x,y) == 1)
 	{
 		if (search(de, x, y) != 0)
 		{
 			show[x][y] = c;
 		}
-		else
+		else if(show[x][y] == ' ')
+		{
+			show[x][y] = c;
+			goto cc;
+
+
+		}
+		else if(search(de, x, y) == 0)
 		{
 			show[x][y] = ' ';
+		cc:
 			if (n == 0)
 			{
 				n++;
