@@ -78,6 +78,7 @@ int play_remove(char de[HAS][LIS], char show[HAS][LIS], int ha, int li)
 			else
 			{
 				change(show, de, x, y);
+				return 1;
 				break;
 			}
 
@@ -123,6 +124,7 @@ aa:
 		if (search(de, x, y) != 0)
 		{
 			show[x][y] = c;
+			goto cc;
 		}
 		else if(show[x][y] == ' ')
 		{
