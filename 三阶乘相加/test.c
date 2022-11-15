@@ -18,7 +18,7 @@ int factorial_sum(int * p)
 	while (i > 0)
 	{
 		sum += factorial(*p);
-		p++;
+		p ++;
 		i--;
 	}
 	return sum;
