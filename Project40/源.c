@@ -5,8 +5,8 @@ void compute(int x)
     static int r = 0;
     if (x >= 6)
     {
-        r = x % 6;
         compute(x / 6);
+        r = x % 6;
         printf("%d", r);
     }
     else
