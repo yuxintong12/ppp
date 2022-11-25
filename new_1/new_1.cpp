@@ -4,6 +4,7 @@ int main()
 {
 	 //输入钱数
 	int mon = 0;
+	printf("你要来一杯么:>");
 	scanf("%d", &mon);
 	//创建空瓶变量
 	int dot = 0;
@@ -15,12 +16,13 @@ int main()
 		dot++;
 		dri++;
 		mon--;
+		//一旦空瓶满两个就兑换一个，饮料就加一空瓶清零
 		if (dot % 2 == 0)
 		{
 			dri++;
-			dot -= 2;
+			dot -= 1;
 		}
 	}
-	printf("%d", dri);
+	printf("你总共喝了:>%d\n", dri);
 	return 0;
 }
