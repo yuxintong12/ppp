@@ -7,14 +7,16 @@ int max(int x, int y)
 }
 int main()
 {
-	freopen("D:\\桌面\\in.txt", "r", stdin);
-	freopen("D:\\桌面\\out.txt", "w", stdout);
+	FILE* in;
+	FILE* out;
+	in = fopen("D:\\桌面\\in.txt", "rb");
+	out = fopen("D:\\桌面\\out.txt", "wb");
 	int i = 0;
 	int j = 0;
-	scanf("%d %d", &i, &j);
+	fscanf(in,"%d %d", &i, &j);
 	int c = max(i, j);
-	printf("最大值是:>%d\n", c);
-	printf("time -> %.5f\n", (double)clock() / CLOCKS_PER_SEC);
+	fprintf(out,"最大值是:>%d\n", c);
+	fprintf(out,"time -> %.5f\n", (double)clock() / CLOCKS_PER_SEC);
 	fclose(stdin);
 	fclose(stdout);
 	return 0;
