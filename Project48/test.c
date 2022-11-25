@@ -17,7 +17,7 @@ int main()
 	int c = max(i, j);
 	fprintf(out,"最大值是:>%d\n", c);
 	fprintf(out,"time -> %.5f\n", (double)clock() / CLOCKS_PER_SEC);
-	fclose(stdin);
-	fclose(stdout);
+	fclose(in);
+	fclose(out);
 	return 0;
 }
