@@ -1,10 +1,10 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include<stdio.h>
 #include<assert.h>
-int my_strlen(const char* p)
+size_t my_strlen(const char* p)
 {
 	assert(p);//判断指针的有效性
-	char * p1 = p;
+	const char * p1 = p;
 	while (*p++)
 	{
 		;
@@ -14,6 +14,6 @@ int my_strlen(const char* p)
 int main()
 {
 	char arr[] = { "abcdef" };
-	printf("%d\n", my_strlen(NULL));
+	printf("%zd\n", my_strlen(arr));
 	return 0;
 }
