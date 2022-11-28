@@ -22,7 +22,7 @@ void sort(int* p, int x)
 }
 int main()
 {
-	int arr[11] = { 1,2,3,4,5,6,7,8,9,10,11 };
+	int arr[14] = { 1,2,3,4,5,6,7,8,9,10,11,90,87,1 };
 	int sz = sizeof(arr) / sizeof(arr[0]);
 	sort(arr, sz);
 	int i = 0;
