@@ -12,7 +12,7 @@ int main()
 		int sum = 0;
 		n = floor(i / 100);
 		k = floor((i - n * 100) / 10);
-		j = floor((i - k * 10 - n * 100));
+		j = i - k * 10 - n * 100;
  		sum = (int)pow(n , 3) + (int)pow(k, 3) + (int)pow(j, 3);
 		if (sum == i)
 
