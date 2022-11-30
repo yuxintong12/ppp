@@ -1,12 +1,13 @@
 #define _CRT_SECURE_NO_WARNINGS 1
+
 #include<stdio.h>
 #include<malloc.h>
 #include<string.h>
-
+#include<assert.h>
 int main()
 {
 	char ch[100];
-	gets(ch);
+	scanf("%[^\n]s", ch);
 	int i = 0;
 	int sz = strlen(ch);
 	int c = 0;
@@ -23,11 +24,12 @@ int main()
 	{
 		if (ch[i] == ' ')
 		{
-
+			assert(p);
 			*(p + j) = i;
 			j++;
 		}
 	}
+	assert(p);
 	for (i = 0; i < c; i++)
 	{
 		ch[*(p + i)] = '\0';
@@ -43,6 +45,7 @@ int main()
 			printf("%s", ch);
 		}
 	}
+	
 
 	return 0;
 }
