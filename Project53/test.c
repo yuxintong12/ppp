@@ -42,9 +42,15 @@ int findMaxConsecutiveOnes(int* nums, int numsSize)
 }
 int main()
 {
-    int arr[6] = { 1,0,1,1,0,1 };
+    /*int arr[6] = { 1,0,1,1,0,1 };
     int sz = sizeof(arr) / sizeof(arr[0]);
     int c = findMaxConsecutiveOnes(arr, sz);
     printf("%d\t", c);
+    char* p = "llll";*/
+    char * a = "kkkkk";
+    char* p = "kkkk";
+    p = a;
+    printf("%p\n", p);
+    printf("%s", p);
     return 0;
 }
