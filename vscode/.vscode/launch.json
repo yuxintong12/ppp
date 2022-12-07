@@ -1,24 +1,47 @@
 {
   "version": "0.2.0",
   "configurations": [
-    {
-      "name": "C/C++ Runner: Debug Session",
+  {
+      "name": "Run C/C++",
       "type": "cppdbg",
       "request": "launch",
+      "program": "${workspaceFolder}/${fileBasenameNoExtension}.exe",
       "args": [],
-      "stopAtEntry": false,
-      "externalConsole": true,
-      "cwd": "d:/库/ppp/vscode",
-      "program": "d:/库/ppp/vscode/build/Debug/outDebug",
-      "MIMode": "gdb",
-      "miDebuggerPath": "gdb",
-      "setupCommands": [
-        {
-          "description": "Enable pretty-printing for gdb",
-          "text": "-enable-pretty-printing",
-          "ignoreFailures": true
-        }
-      ]
-    }
+  "stopAtEntry": false,
+  "cwd": "${workspaceFolder}",
+  "environment": [],
+  "externalConsole": true,
+  "MIMode": "gdb",
+  "miDebuggerPath": "XXX/bin/gdb.exe",
+  "setupCommands": [
+  {
+      "description": "Enable pretty-printing for gdb",
+      "text": "-enable-pretty-printing",
+      "ignoreFailures": false
+  }
+],
+  "preLaunchTask": "build & run file"
+},
+{
+  "name": "Debug C/C++",
+  "type": "cppdbg",
+  "request": "launch",
+  "program": "${workspaceFolder}/${fileBasenameNoExtension}.exe",
+  "args": [],
+  "stopAtEntry": false,
+  "cwd": "${workspaceFolder}",
+  "environment": [],
+  "externalConsole": true,
+  "MIMode": "gdb",
+  "miDebuggerPath": "C:/TDM-GCC-64/gdb64/bin/gdb.exe",
+  "setupCommands": [
+  {
+      "description": "Enable pretty-printing for gdb",
+      "text": "-enable-pretty-printing",
+      "ignoreFailures": false
+  }
+  ],
+  "preLaunchTask": "build & debug file"
+  }
   ]
 }
