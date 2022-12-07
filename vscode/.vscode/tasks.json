@@ -1,0 +1,41 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+    {
+        
+        "label": "build & debug file",
+        "type": "shell",
+        "command": "g++",
+        "args": [
+            "-g",
+            "-o",
+            "${fileBasenameNoExtension}",
+            "${file}"
+            
+    ],
+    "group": {
+    "kind": "build",
+    "isDefault": true
+    
+    },
+    "presentation": { 
+                "panel": "new" //默认为“shared“表示共享，改成new之后每个进程创建新的端口
+            }
+    
+},
+{
+    "label": "build & run file",
+    "type": "shell",
+    "command": "g++",
+    "args": [
+        "-o",
+        "${fileBasenameNoExtension}",
+        "${file}"
+    ],
+    "group": {
+        "kind": "build",
+        "isDefault": true
+        }
+    }
+    ]
+}
