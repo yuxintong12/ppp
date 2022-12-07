@@ -16,7 +16,7 @@ int main()
 {
 	char ch1[20] = "kkkkk";
 	char ch[20] = "00myll";
-	int x = strcmp(ch, ch1);
+	int x = strcmp(ch, ch1 );
 	int c = my_strcmp(ch, ch1);
 	return 0;
 }
