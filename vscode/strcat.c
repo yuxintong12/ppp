@@ -2,14 +2,15 @@
 #include<assert.h>
 char * my_strcat(char * dest,const char * scr)
 {
+    assert(dest&&scr);
     char * tem = dest;
     while(*dest)
     {
         dest++;
     }
-    while(*scr)
+    while(*dest++ = *scr++)
     {
-        *dest++ = *scr++;
+        ;
     }
     return tem;
 
