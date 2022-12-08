@@ -12,11 +12,20 @@ int my_strcmp(const char* ch, const char* ch1)
 	}
 	return *ch - *ch1;
 }
+void test(int a, int* a)
+{
+
+}
 int main()
 {
-	char ch1[20] = "kkkkk";
-	char ch[20] = "00myll";
+	int ch1[20] = { 200,22 };
+	int ch[20] = { 52,36 };
 	int x = strcmp(ch, ch1 );
+	void* p = ch;
+	void* p1 = ch1;
+	*((char*)p)++ = *((char*)p1)++;
+	int a = 0;
+	test(a, &a);
 	int c = my_strcmp(ch, ch1);
 	return 0;
 }
