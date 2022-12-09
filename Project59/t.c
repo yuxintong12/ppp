@@ -1,27 +1,29 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 
 #include <stdio.h>
-
+#include<stdlib.h>
 int main()
 {
     int i = 12;
     int x = 0;
 
-    freopen("in.txt", "r", stdin);
-    freopen("out.txt", "w", stdout);
+    /*freopen("in.txt", "r", stdin);
+    freopen("out.txt", "w", stdout);*/
+    FILE* in = fopen("in.txt", "rb");
+    FILE* out = fopen("out.txt", "wb");
 
-    for (i = 12; i > 0; i--)
+    for (i = 12; i >0; i--)
     {
 
         
-        scanf("%d", &x);
-        getchar();
-        printf("%c", x);
+        fscanf(in,"%d", &x);
+        fgetc(in);
+        fprintf(out,"%c", x);
 
 
     }
-    fclose(stdin);
-    fclose(stdout);
+    fclose(in);
+    fclose(out);
     return 0;
 }
     
