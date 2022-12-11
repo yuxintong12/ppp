@@ -11,7 +11,7 @@ void play()
 	while (1)
 	{
 		printf("请输入要下的坐标>");
-		scanf("%d%d", &x, &y);
+		scanf("%d,%d", &x, &y);//输入x,y更加符合习惯
 		if (x > H_max || y > L_max)
 		{
 			printf("坐标输入错误！请输入x(1,%d) y(1,%d)\n", H_max, L_max);
