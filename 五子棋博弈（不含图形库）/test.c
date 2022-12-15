@@ -8,17 +8,26 @@ void menu()
 }
 void play()
 {
-	char bord[HA] = { 0 };
-	char show[LI] = { 0 };
-
+	char win = 0;
+	char bord[HA][LI] = {0};
+	//对棋盘界面进行初始化设计
+	init(bord, HA, LI);//对棋盘内容进行初始化
+	/*printf("00\n");*/
+	//打印棋盘
+	print_bord(bord, HA, LI);
+	//玩家下棋
+	int * p =player_move(bord, HA, LI);
+	print_bord(bord, HA, LI);
+	is_win(bord,HA,LI,p);
 }
 int main()
 {
 	char judge = 0;
 	do
 	{
-		puts("来吧展示:>");
+		
 		menu();
+		puts("来吧展示:>");
 		judge = getchar();
 		getchar();
 		switch (judge)
