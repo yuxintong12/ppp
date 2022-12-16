@@ -15,10 +15,20 @@ void play()
 	/*printf("00\n");*/
 	//打印棋盘
 	print_bord(bord, HA, LI);
-	//玩家下棋
-	int * p =player_move(bord, HA, LI);
-	print_bord(bord, HA, LI);
-	is_win(bord,HA,LI,p);
+	while (1)
+	{
+		//玩家下棋
+		int* p = player_move(bord, HA, LI);
+		print_bord(bord, HA, LI);
+		char a = is_win(bord, HA, LI, p);
+		print_bord(bord, HA, LI);
+		if (a != 'c')
+		{
+			break;
+		}
+
+	}
+
 }
 int main()
 {
