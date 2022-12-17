@@ -195,6 +195,22 @@ void r_right(char ch[HA][LI], int* p1, int ha, int li, int* p)
 		}
 	}
 }
+int is_full(char ch[HA][LI], int ha, int li)
+{
+	int i = 0;
+	int j = 0;
+	for (i = 0; i < ha; i++)
+	{
+		for (j = 0; j < li; j++)
+		{
+			if (ch[i][j] == ' ')
+			{
+				return 0;
+			}
+		}
+	}
+	return 1;
+}
 char win_char(char ch[HA][LI], int ha, int li, int* p)
 {
 	int i = 0;
@@ -208,7 +224,7 @@ char win_char(char ch[HA][LI], int ha, int li, int* p)
 			return ch[p[0]][p[1]];
 		}
 	}
-	if (0)
+	if (is_full(ch,HA,LI))
 	{
 		return 'c';
 	}
