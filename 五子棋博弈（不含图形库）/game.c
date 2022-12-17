@@ -258,4 +258,9 @@ char is_win(char ch[HA][LI], int ha, int li,int * p)
 		break;
 	}
 }
+int* computer_move(char ch[HA][LI], int ha, int li)
+{
+	my_judge(ch, HA, LI);
+}
+
 

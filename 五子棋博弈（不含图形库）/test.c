@@ -26,6 +26,13 @@ void play()
 		{
 			break;
 		}
+		p = computer_move(bord, HA, LI);
+		print_bord(bord, HA, LI);
+		a = is_win(bord, HA, LI, p);
+		if (a != 'c')
+		{
+			break;
+		}
 
 	}
 
