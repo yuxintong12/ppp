@@ -1,35 +1,26 @@
 #define _CRT_SECURE_NO_WARNINGS 1
-enum a
-{
-    aa,
-    cc,
-    bb,
-    ll
-};
+
 #include <stdio.h>
 #include<stdlib.h>
+#include<string.h>
+#include<assert.h>
+char* mystrncpy(char* dest, const char* scr, int n)
+{
+    assert(dest && scr);
+    char* ret = dest;
+    while ((*dest++ = *scr++) && n--)
+    {
+        ;
+    }
+    return ret;
+}
 int main()
 {
-    int i = 12;
-    int x = 0;
-    int aa = 0;
-    /*freopen("in.txt", "r", stdin);
-    freopen("out.txt", "w", stdout);*/
-    FILE* in = fopen("in.txt", "rb");
-    FILE* out = fopen("out.txt", "wb");
+    char ch[20] = "yuxintong";
+    char ch1[10] = "lvxiao";
+    printf("%s\n", mystrncpy(ch, ch1, 2));
 
-    for (i = 12; i >0; i--)
-    {
-
-        
-        fscanf(in,"%d", &x);
-        fgetc(in);
-        fprintf(out,"%c", x);
-
-
-    }
-    fclose(in);
-    fclose(out);
+    printf("%s\n",strncpy(ch, ch1, 2));
     return 0;
 }
     
