@@ -1,43 +1,34 @@
-#include<stdio.h>
-#include<assert.h>
-#include<string.h>
-int my_strcmp(const char * ch1,const char*ch2)
+#include <stdio.h>
+#include<math.h>
+void ju(int *p,int sz,int x)
 {
-    assert(ch1 && ch2);
-    while(*ch1 && *ch2 &&*ch1++ == *ch2++)
+    int i = 0;
+    int sum = 0;
+    for(i = 0;i < sz - 1;i += 2)
     {
-       int x = 0;
+       sum += p[i] * p[i + 1]; 
     }
-    return *ch1 - *ch2;
+    if(sum == x)
+    {
+        printf("%d ",x);
+    }
 }
 int main()
 {
-    char ch[20] = "kk0kkk50";
-    char ch1[20] = "kkk";
-    if(my_strcmp(ch,ch1) < 0)
+    int arr[8] = {0};
+    int i = 0;
+    int j = 0;
+    int sz = sizeof(arr)/sizeof(arr[0]);
+    for(i = 10000;i < 100000;i ++)
     {
-        printf("<\n");
+        for(j = 1;j <= 4;j ++)
+        {
+            arr[2*(j - 1)] = i / pow(10,j);
+            arr[2 *j-1] = i % (int)pow(10,j);
+        }
+        ju(arr,sz,i);
+
     }
-    else if(my_strcmp(ch,ch1) < 0)
-    {
-        printf(">\n");
-    }
-    else
-    {
-        printf("=\n");
-    }
-    if(strcmp(ch,ch1) < 0)
-    {
-        printf("<");
-    }
-    else if(strcmp(ch,ch1) < 0)
-    {
-        printf(">");
-    }
-    else
-    {
-        printf("=");
-    }
+
     return 0;
-    
 }

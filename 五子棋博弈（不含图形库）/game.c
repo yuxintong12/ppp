@@ -78,6 +78,14 @@ void line(char ch[HA][LI], int* p1, int ha, int li, int* p)
 	int flag1 = 1;
 	while ((flag||flag1) && *p1 != 5)
 	{
+		if (x + i >= ha)
+		{
+			flag = 0;
+		}
+		if (x - j <= 0)
+		{
+			flag1 = 0;
+		}
 		if ((ch[x + i][y] == ch[x][y]) && flag)
 		{
 			*p1 = *p1 + 1;
@@ -110,7 +118,15 @@ void l_lie(char ch[HA][LI], int* p1, int ha, int li, int* p)
 	int flag1 = 1;
 	while (flag + flag1 != 0 && *p1 != 5)
 	{
-		if ((ch[x][y + i] == ch[x][y]) || flag)
+		if (y + i >= li)
+		{
+			flag = 0;
+		}
+		if (y - j <= 0)
+		{
+			flag1 = 0;
+		}
+		if ((ch[x][y + i] == ch[x][y]) && flag)
 		{
 			*p1 = *p1 + 1;
 
@@ -120,7 +136,7 @@ void l_lie(char ch[HA][LI], int* p1, int ha, int li, int* p)
 		{
 			flag = 0;
 		}
-		if (ch[x][y - j] == ch[x][y] || flag1)
+		if (ch[x][y - j] == ch[x][y] && flag1)
 		{
 			*p1 = *p1 + 1;
 
@@ -140,9 +156,17 @@ void f_line(char ch[HA][LI], int* p1, int ha, int li, int* p)
 	int y = p[1];
 	int flag = 1;
 	int flag1 = 1;
-	while (flag + flag1 != 0 || *p1 != 5)
+	while ((flag || flag1) && *p1 != 5)
 	{
-		if ((ch[x - i][y + i] == ch[x][y]) || flag)
+		if (y + i >= li)
+		{
+			flag = 0;
+		}
+		if (y - j <= 0)
+		{
+			flag1 = 0;
+		}
+		if ((ch[x - i][y + i] == ch[x][y]) && flag)
 		{
 			*p1 = *p1 + 1;
 
@@ -152,7 +176,7 @@ void f_line(char ch[HA][LI], int* p1, int ha, int li, int* p)
 		{
 			flag = 0;
 		}
-		if (ch[x + j][y - j] == ch[x][y] || flag1)
+		if (ch[x + j][y - j] == ch[x][y] && flag1)
 		{
 			*p1 = *p1 + 1;
 
@@ -172,9 +196,17 @@ void r_right(char ch[HA][LI], int* p1, int ha, int li, int* p)
 	int y = p[1];
 	int flag = 1;
 	int flag1 = 1;
-	while (flag + flag1 != 0 || *p1 != 5)
+	while (flag + flag1 != 0 && *p1 != 5)
 	{
-		if ((ch[x - i][y - i] == ch[x][y]) || flag)
+		if (y - i >= li)
+		{
+			flag = 0;
+		}
+		if (y + j <= 0)
+		{
+			flag1 = 0;
+		}
+		if ((ch[x - i][y - i] == ch[x][y]) && flag)
 		{
 			*p1 = *p1 + 1;
 
@@ -184,7 +216,7 @@ void r_right(char ch[HA][LI], int* p1, int ha, int li, int* p)
 		{
 			flag = 0;
 		}
-		if (ch[x + j][y + j] == ch[x][y] || flag1)
+		if (ch[x + j][y + j] == ch[x][y] && flag1)
 		{
 			*p1 = *p1 + 1;
 

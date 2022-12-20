@@ -1,12 +1,18 @@
 #define _CRT_SECURE_NO_WARNINGS 1
-
+enum a
+{
+    aa,
+    cc,
+    bb,
+    ll
+};
 #include <stdio.h>
 #include<stdlib.h>
 int main()
 {
     int i = 12;
     int x = 0;
-
+    int aa = 0;
     /*freopen("in.txt", "r", stdin);
     freopen("out.txt", "w", stdout);*/
     FILE* in = fopen("in.txt", "rb");
