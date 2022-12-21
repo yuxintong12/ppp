@@ -1,9 +1,9 @@
 #pragma once
 enum san
 {
-	HA = 3,
-	LI = 3,
-	ZI = 3
+	HA = 6,
+	LI = 6,
+	ZI = 5
 };
 #include<stdio.h>
 #include<string.h>
