@@ -68,7 +68,7 @@ int* player_move(char bord[HA][LI], int ha, int li)
 		}
 	}
 }
-void line(char ch[HA][LI], int* p1, int ha, int li, int* p)
+void l_lie(char ch[HA][LI], int* p1, int ha, int li, int* p)
 {
 	int i = 1;
 	int j = 1;
@@ -76,17 +76,17 @@ void line(char ch[HA][LI], int* p1, int ha, int li, int* p)
 	int y = p[1];
 	int flag = 1;
 	int flag1 = 1;
-	while ((flag||flag1) && *p1 != 5)
+	while ((flag||flag1) && *p1 != ZI - 1)
 	{
 		if (x + i >= ha)
 		{
 			flag = 0;
 		}
-		if (x - j <= 0)
+		if (x - j < 0)
 		{
 			flag1 = 0;
 		}
-		if ((ch[x + i][y] == ch[x][y]) && flag)
+		if ((ch[x + i][y] == ch[x][y]) && flag && ch[x][y])
 		{
 			*p1 = *p1 + 1;
 			i++;
@@ -95,7 +95,7 @@ void line(char ch[HA][LI], int* p1, int ha, int li, int* p)
 		{
 			flag = 0;
 		}
-		if (ch[x - j][y] == ch[x][y] && flag1)
+		if ((ch[x - j][y] == ch[x][y]) && flag1 && ch[x][y])
 		{
 			*p1 = *p1 + 1;
 
@@ -108,7 +108,7 @@ void line(char ch[HA][LI], int* p1, int ha, int li, int* p)
 		}
 	}
 }
-void l_lie(char ch[HA][LI], int* p1, int ha, int li, int* p)
+void line(char ch[HA][LI], int* p1, int ha, int li, int* p)
 {
 	int i = 1;
 	int j = 1;
@@ -116,17 +116,17 @@ void l_lie(char ch[HA][LI], int* p1, int ha, int li, int* p)
 	int y = p[1];
 	int flag = 1;
 	int flag1 = 1;
-	while (flag + flag1 != 0 && *p1 != 5)
+	while (flag + flag1 != 0 && *p1 != ZI - 1)
 	{
 		if (y + i >= li)
 		{
 			flag = 0;
 		}
-		if (y - j <= 0)
+		if (y - j < 0)
 		{
 			flag1 = 0;
 		}
-		if ((ch[x][y + i] == ch[x][y]) && flag)
+		if ((ch[x][y + i] == ch[x][y]) && flag && ch[x][y])
 		{
 			*p1 = *p1 + 1;
 
@@ -136,7 +136,7 @@ void l_lie(char ch[HA][LI], int* p1, int ha, int li, int* p)
 		{
 			flag = 0;
 		}
-		if (ch[x][y - j] == ch[x][y] && flag1)
+		if ((ch[x][y - j] == ch[x][y]) && flag1 && ch[x][y])
 		{
 			*p1 = *p1 + 1;
 
@@ -162,11 +162,11 @@ void f_line(char ch[HA][LI], int* p1, int ha, int li, int* p)
 		{
 			flag = 0;
 		}
-		if (y - j <= 0)
+		if (y - j < 0)
 		{
 			flag1 = 0;
 		}
-		if ((ch[x - i][y + i] == ch[x][y]) && flag)
+		if ((ch[x + i][y + i] == ch[x][y]) && flag && ch[x][y])
 		{
 			*p1 = *p1 + 1;
 
@@ -176,7 +176,7 @@ void f_line(char ch[HA][LI], int* p1, int ha, int li, int* p)
 		{
 			flag = 0;
 		}
-		if (ch[x + j][y - j] == ch[x][y] && flag1)
+		if ((ch[x - j][y - j] == ch[x][y]) && flag1&& ch[x][y])
 		{
 			*p1 = *p1 + 1;
 
@@ -198,15 +198,15 @@ void r_right(char ch[HA][LI], int* p1, int ha, int li, int* p)
 	int flag1 = 1;
 	while (flag + flag1 != 0 && *p1 != 5)
 	{
-		if (y - i >= li)
+		if (y - j >= 0&&y + i < li)
 		{
 			flag = 0;
 		}
-		if (y + j <= 0)
+		if (x + j < ha &&x - i >=0 )
 		{
 			flag1 = 0;
 		}
-		if ((ch[x - i][y - i] == ch[x][y]) && flag)
+		if ((ch[x - i][y + i] == ch[x][y]) && flag&&ch[x][y])
 		{
 			*p1 = *p1 + 1;
 
@@ -216,7 +216,7 @@ void r_right(char ch[HA][LI], int* p1, int ha, int li, int* p)
 		{
 			flag = 0;
 		}
-		if (ch[x + j][y + j] == ch[x][y] && flag1)
+		if ((ch[x + j][y - j] == ch[x][y]) && flag1 && ch[x][y])
 		{
 			*p1 = *p1 + 1;
 
@@ -247,17 +247,17 @@ int is_full(char ch[HA][LI], int ha, int li)
 char win_char(char ch[HA][LI], int ha, int li, int* p)
 {
 	int i = 0;
-	int arr[4] = { 0 };
+	int arr[4] = { 0};
 	static void (*ch1[4])(char[HA][LI], int*, int, int, int*) = { line ,l_lie,f_line ,r_right };
 	for (i = 0; i < 4; i++)
 	{
 		ch1[i](ch, arr + i, HA, LI, p);
-		if (arr[i] == 5)
+		if (arr[i] == ZI-1)
 		{
 			return ch[p[0]][p[1]];
 		}
 	}
-	if (is_full(ch,HA,LI))
+	if (is_full(ch,HA,LI) == 0)
 	{
 		return 'c';
 	}
@@ -293,26 +293,22 @@ char is_win(char ch[HA][LI], int ha, int li,int * p)
 }
 int* computer_move(char ch[HA][LI], int ha, int li)
 {
-	my_judge(ch, HA, LI);
-}
-int* my_judge(char ch[HA][LI], int ha, int li)
-{
+	int arr[2] = { 0 };
+	printf("µçÄÔÂä×Ó\n");
 	int i = 0;
-	int j = 0;
-	char ch1[HA][LI] = { 0 };
-	strcpy(ch1, ch);
-	for (i = 0; i < ha; i++)
+	while (1)
 	{
-		for (j = 0; j < li; j++)
+		int x = rand() % HA;
+		int y = rand() % LI;
+		if ((x && y) && ch[x][y] == ' ')
 		{
-			if (ch1[i][j] == ' ')
-			{
-				ch1[i][j] = '#';
-			}
+			ch[x][y] = '#';
+			arr[i] = x;
+			arr[i + 1] = y;
+			return arr;
 		}
 	}
-	int scr[HA][LI] = { 0 };
-
 }
+
 
 

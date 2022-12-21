@@ -18,27 +18,32 @@ void play()
 	while (1)
 	{
 		//Íæ¼ÒÏÂÆå
-		int* p = player_move(bord, HA, LI);
-		print_bord(bord, HA, LI);
+		int* p = player_move(bord, HA, LI);\
 		char a = is_win(bord, HA, LI, p);
-		print_bord(bord, HA, LI);
 		if (a != 'c')
 		{
+			assert(a > 0);
+			print_bord(bord, HA, LI);
 			break;
 		}
 		p = computer_move(bord, HA, LI);
 		print_bord(bord, HA, LI);
 		a = is_win(bord, HA, LI, p);
-		if (a != 'c')
+		if (a != 'c'&&a != ' ')
 		{
+			assert(a > 0);
+			printf("%d\n", a);
+			print_bord(bord, HA, LI);
 			break;
 		}
+		
 
 	}
 
 }
 int main()
 {
+	srand((unsigned int)time(NULL));
 	char judge = 0;
 	do
 	{
@@ -51,6 +56,7 @@ int main()
 		{
 		case '1':
 			play();
+			getchar();
 			break;
 		case '2':
 			break;
