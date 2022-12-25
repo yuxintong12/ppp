@@ -1,49 +1,56 @@
-#define _CRT_SECURE_NO_WARNINGS 1
-#include<stdio.h>
-#include<string.h>
-void* my_memcpy(void* dest, const void* scr, size_t n)
+#include <stdio.h>
+#include <stdlib.h>
+int check(int* p,int sz)
 {
-    void* ret = dest;
-    while ((*(char*)dest++ = *(char*)scr++) && n--)
+  int i = 0;
+  for(i = 0;i < sz;i ++)
+  {
+    if(p[i] > 2021)
     {
-        ;
+      return 0;
     }
-    return ret;
+    else if(p[i] == 2021)
+    {
+        return 2;
+    }
+  }
+  return 1;
 }
-void* my_memmove(void* dest, const void* scr, size_t n)
+void mydiv(int x,int *p)
 {
-    if (dest > scr)
-    {
-        void* ret = dest;
-        while ((*(char*)dest = *(char*)scr) && n--)
-        {
-            ;
-        }
-        return ret;
-    }
-    else
-    {
-        void* tem = dest;
-        while (n--)
-        {
-            *((char*)dest + n) = *((char*)scr + n);
-        }
-        return tem;
-
-    }
+  if(x < 10)
+  {
+    p[x] ++;
+  }
+  else
+  {
+    p[x % 10] ++;
+    mydiv(x / 10,p);
+  }
 }
 int main()
 {
-    char ch[10] = "kjkjkak";
-    char ch1[10] = "llkll";
-    int a = memcmp(ch, ch1, 5);
-    my_memcpy(ch, ch + 1, 3);
-    printf("%s\n", ch);
-    memcpy(ch, ch + 1, 3);
-    printf("%s\n", ch);
-    memmove(ch, ch + 1, 3);
-    printf("%s\n", ch);
-    my_memmove(ch, ch + 1, 3);
-    printf("%s\n", ch);
-    return 0;
+  int arr[10] = {0,0,0,0,0,0,0,0,0,0};
+  int i = 0;
+  int sz = sizeof(arr) /sizeof(arr[0]);
+  while(1)
+  {
+    mydiv(i,arr);
+    if(check(arr,sz) != 1)
+    {
+        break;
+    }
+    i++;
+
+  }
+  if(check(arr,sz))
+  {
+    printf("%d\n",i);
+  }
+  else
+  {
+    printf("%d\n",i -1);
+  }
+  // 请在此输入您的代码
+  return 0;
 }
