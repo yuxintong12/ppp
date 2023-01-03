@@ -18,8 +18,14 @@ int main()
 	int arr[3] = { 1,3,2 };
 	int arr1[3] = { 1,6,5 };
 	int sz = sizeof(arr) / sizeof(arr[0]);
-	change(arr, arr1,sz);
+	float z = 5.5f;
+	int a = (int)z;
 	int i = 0;
+	for (i = 0; i < 100; i++)
+	{
+		z++;
+	}
+	change(arr, arr1,sz);
 	for (i = 0; i < sz; i++)
 	{
 		printf("%d ", arr[i]);

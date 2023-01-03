@@ -1,35 +1,32 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include<stdio.h>
-int minNumberInRotateArray(int* rotateArray, int rotateArrayLen)
+#include<stdlib.h>
+#include<time.h>
+int test(int* p, int p)
 {
-    // write code here
-    int* left = rotateArray;
-    int* right = rotateArray + rotateArrayLen - 1;
-    int* mid = left;
-    while (left < right)
-    {
-        mid = left + (right - left) / 2;
-        if (*mid > *right)
-        {
-            left = mid + 1;
-        }
-        else if (*mid < *right)
-        {
-            right = mid;
-        }
-        else if (*mid == *right)
-        {
-            right--;
-        }
-
-    }
-    return *right;
 
 }
 int main()
 {
-    int arr[] = { 4,3 };
-    int sz = sizeof(arr) / sizeof(arr[0]);
-   printf("%d", minNumberInRotateArray(arr, sz));
+    int i = 0;
+    srand((unsigned int)time(NULL));
+    int a = -1;
+    int b = 29;
+    int count = 0;
+    test(&a, a);
+
+   /* for (i = 0; i < 32; i++)
+    {
+
+        if ((a >> i) & 1)
+        {
+            count++;
+        }
+    }*/
+    while (a)
+    {
+        a = a & (a - 1);
+        count++;
+    }
     return 0;
 }
