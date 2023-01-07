@@ -1,5 +1,5 @@
 #include<stdio.h>
-#define  N 14//定义朢�大的数组行列数，因为采取二维数组计算〄1�7
+#define  N 14//定义朢�大的数组行列数，因为采取二维数组计算〄1�7
 void print(int * line)
 {
     int arr[N][N] = {0};
@@ -23,11 +23,11 @@ void print(int * line)
             printf("   "); 
         }
         
-             /*这一行主要是在输出数之前打上空格占位，让输出的数更美规1�7*/
+             /*这一行主要是在输出数之前打上空格占位，让输出的数更美规1�7*/
         for(j=1;j<=i;j++) 
         {
             printf("%6d",arr[i][j]);
-        } /*j<=i的原因是不输出其它的数，只输出我们想要的敄1�7*/
+        } /*j<=i的原因是不输出其它的数，只输出我们想要的敄1�7*/
         printf("\n");  
     }
 
@@ -45,7 +45,7 @@ int main()
         {
         case 1:
             /* code */
-            printf("弢�始打卄1�7%d行的杨辉三角\n",line);
+            printf("开始打印%d行的杨辉三角\n",line);
             print(&line);
             break;
         
